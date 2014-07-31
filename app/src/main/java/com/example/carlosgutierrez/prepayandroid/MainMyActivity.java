@@ -1,6 +1,8 @@
 package com.example.carlosgutierrez.prepayandroid;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -36,7 +38,18 @@ public class MainMyActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void doLogin(View v){
-        Toast.makeText(this, "It works!",Toast.LENGTH_SHORT).show();
+    private void doLogin(View v) {
+        Toast.makeText(this, "It works!", Toast.LENGTH_SHORT).show();
+    }
+
+    private void doRegister(View v) {
+        Toast.makeText(this, "It works too!", Toast.LENGTH_SHORT).show();
+        //TODO: Ve a la pantalla de registro tonto!
+        String number = "23454568678";
+        Intent intent = new Intent(Intent.ACTION_CALL);
+        intent.setData(Uri.parse("tel:" + number));
+        startActivity(intent);
+
+
     }
 }
