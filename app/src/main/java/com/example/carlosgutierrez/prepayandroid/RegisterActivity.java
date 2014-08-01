@@ -16,6 +16,7 @@ public class RegisterActivity extends Activity{
     }
 
     public void registerUser(View v){
-        Toast.makeText(this,"Login",Toast.LENGTH_SHORT).show();
+        //TODO Use the register service.
+
     }
 }
