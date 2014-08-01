@@ -38,18 +38,14 @@ public class MainMyActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void doLogin(View v) {
-        Toast.makeText(this, "It works!", Toast.LENGTH_SHORT).show();
+    public void doLogin(View v) {
+        startActivity(new Intent(this,LoginActivity.class));
+        //Toast.makeText(this, "It works!", Toast.LENGTH_SHORT).show();
     }
 
-    private void doRegister(View v) {
-        Toast.makeText(this, "It works too!", Toast.LENGTH_SHORT).show();
-        //TODO: Ve a la pantalla de registro tonto!
-        String number = "23454568678";
-        Intent intent = new Intent(Intent.ACTION_CALL);
-        intent.setData(Uri.parse("tel:" + number));
-        startActivity(intent);
-
+    public void doRegister(View v) {
+        startActivity(new Intent(this,RegisterActivity.class));
+        //Toast.makeText(this, "It works too!", Toast.LENGTH_SHORT).show();
 
     }
 }
