@@ -2,8 +2,10 @@ package com.example.carlosgutierrez.prepayandroid;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.volley.DefaultRetryPolicy;
@@ -23,7 +25,12 @@ import java.util.Map;
  */
 public class RegisterActivity extends Activity {
     private String BASE_URL = "http://prepago.herokuapp.com/api/signup";
-   // private String REQUESTBIN_URL = "http://requestb.in/sqnq7qsq";
+    public EditText userPhone;
+    public EditText userEmail;
+    public EditText userPassword;
+    public EditText userPasswordConfirmation;
+    public EditText userPin;
+    private String REQUESTBIN_URL = "http://requestb.in/sqnq7qsq";
     //TODO email and phone must be unique.
     //private String DUMMY_URL = "http://prepago.herokuapp.com/api/signup?user[email]=f1@example.com&user[password]=password&user[password_confirmation]=password&user[pin]=1234&user[phone]=1011";
 
@@ -31,12 +38,17 @@ public class RegisterActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        userEmail = (EditText) findViewById(R.id.emailEditText);
+        userPhone = (EditText) findViewById(R.id.phoneEditText);
+        userPin = (EditText) findViewById(R.id.pinEditText);
+        userPassword = (EditText) findViewById(R.id.editTextPassword);
+        userPasswordConfirmation = (EditText) findViewById(R.id.confirmPasswordEditText);
     }
 
     public void registerUser(View v) {
         //TODO Use the register service.
         RequestQueue requestQueue = Volley.newRequestQueue(this);
-        final StringRequest stringRequest = new StringRequest(Request.Method.POST, BASE_URL ,
+        final StringRequest stringRequest = new StringRequest(Request.Method.POST, REQUESTBIN_URL,
                 new Response.Listener<String>() {
 
                     @Override
@@ -63,11 +75,11 @@ public class RegisterActivity extends Activity {
             protected Map<String, String> getParams()
                     throws com.android.volley.AuthFailureError {
                 HashMap<String, String> params = new HashMap<String, String>();
-                params.put("user[email]", "f2@example.com");
-                params.put("user[password]", "password");
-                params.put("user[password_confirmation]", "password");
-                params.put("user[pin]", "1234");
-                params.put("user[phone]", "1012");
+                params.put("user[email]", "" + userEmail.getText().toString());
+                params.put("user[password]", "" + userPassword.getText().toString());
+                params.put("user[password_confirmation]", "" + userPasswordConfirmation.getText().toString());
+                params.put("user[pin]", "" + userPin.getText().toString());
+                params.put("user[phone]", "" + userPhone.getText().toString());
                 return params;
             }
         };
