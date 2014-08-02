@@ -23,7 +23,7 @@ import java.util.Map;
  */
 public class RegisterActivity extends Activity {
     private String BASE_URL = "http://prepago.herokuapp.com/api/signup";
-    private String REQUESTBIN_URL = "http://requestb.in/sqnq7qsq";
+   // private String REQUESTBIN_URL = "http://requestb.in/sqnq7qsq";
     //TODO email and phone must be unique.
     //private String DUMMY_URL = "http://prepago.herokuapp.com/api/signup?user[email]=f1@example.com&user[password]=password&user[password_confirmation]=password&user[pin]=1234&user[phone]=1011";
 
@@ -36,7 +36,7 @@ public class RegisterActivity extends Activity {
     public void registerUser(View v) {
         //TODO Use the register service.
         RequestQueue requestQueue = Volley.newRequestQueue(this);
-        final StringRequest stringRequest = new StringRequest(Request.Method.GET, REQUESTBIN_URL,
+        final StringRequest stringRequest = new StringRequest(Request.Method.POST, BASE_URL ,
                 new Response.Listener<String>() {
 
                     @Override
@@ -70,11 +70,10 @@ public class RegisterActivity extends Activity {
                 params.put("user[phone]", "1012");
                 return params;
             }
-            );
-            // use setRetryPolicy to reconfigure retry policies.
-            stringRequest.setRetryPolicy(new
-            DefaultRetryPolicy(15000,1,1.0f);
-            // add the request object to the queue to be executed.
-            requestQueue.add(stringRequest);
-        }
+        };
+        // use setRetryPolicy to reconfigure retry policies.
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(15000, 1, 1.0f));
+        // add the request object to the queue to be executed.
+        requestQueue.add(stringRequest);
     }
+}

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/PrepayAndroid.iml" filepath="$PROJECT_DIR$/PrepayAndroid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PrepayForAndroid.iml" filepath="$PROJECT_DIR$/PrepayForAndroid.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

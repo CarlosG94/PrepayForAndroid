@@ -22,6 +22,4 @@ android {
 dependencies {
     compile 'com.mcxiaoke.volley:library-aar:1.0.0'
     compile fileTree(dir: 'libs', include: ['*.jar'])
-
-
 }
