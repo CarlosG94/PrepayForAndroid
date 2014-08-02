@@ -48,7 +48,7 @@ public class RegisterActivity extends Activity {
     public void registerUser(View v) {
         //TODO Use the register service.
         RequestQueue requestQueue = Volley.newRequestQueue(this);
-        final StringRequest stringRequest = new StringRequest(Request.Method.POST, REQUESTBIN_URL,
+        final StringRequest stringRequest = new StringRequest(Request.Method.POST, BASE_URL,
                 new Response.Listener<String>() {
 
                     @Override
