@@ -5,8 +5,24 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
-    <!--String buttons-->
+    <!-- String buttons -->
 
     <string name="log_in">Iniciar Sesión</string>
+    <string name="register">Regístrate</string>
+    <string name="enter">Entrar</string>
+    <string name="name">Nombre</string>
+    <string name="lastname">Apellido</string>
+    <string name="email">Correo electrónico</string>
+    <string name="phone">Numero telefónico</string>
+    <string name="pin">Pin</string>
+    <string name="confirmPin">Confirma Pin</string>
+    <string name="title_activity_login">Login Activity</string>
+    <string name="title_activity_payment">PaymentActivity</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="payButton">Pagar</string>
+    <string name="saveButton">Guardar Cambios</string>
+    <string name="paymentAmount">Monto a Pagar</string>
+    <string name="user">Usuario</string>
 
 </resources>
